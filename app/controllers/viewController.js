@@ -1,4 +1,7 @@
-const blogs = require('../../blogs.json')
+const Blogs = require('../models/blogModel')
+const moment = require('moment');
+// const blogs = require('../../blogs.json')
+
 
 const viewController = () => {
     return {
@@ -17,16 +20,20 @@ const viewController = () => {
         contact(req, res){
             res.render('contact');
         },
-        blogs(req, res){
-            res.render('blogs', { blogs });
+        async blogs(req, res){
+            const blogs = await Blogs.find({}).sort({date: -1}); 
+            console.log(blogs)
+            res.render('blogs', { moment, blogs });
         },
-        eachBlog(req, res){
+        async eachBlog(req, res){
             // console.log(req.params)
             const blogId = req.params.id;
-            const blog = blogs.find(blog => blog._id == blogId);
-
-            // console.log(blog)
-            return res.render('eachBlog', { blog });
+            const blog = await Blogs.findById(blogId).exec();
+            // console.log(blog.title)
+            return res.render('eachBlog', { moment, blog });
+        },
+        postBlog(req, res){
+            res.render("postBlog")
         }
     }
 }

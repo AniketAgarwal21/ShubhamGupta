@@ -63,10 +63,10 @@ sr.reveal('.blog__title',{interval: 200});
 sr.reveal('.blog__content',{interval: 100}); 
 sr.reveal('.blog__readmore',{ interval: 200}); 
 sr.reveal('.blog__date',{ interval: 200}); 
+sr.reveal('.eachBlog__content',{ interval: 200}); 
 
 const blog_content = $('.blog__content');
-blog_content.text(blog_content.text().substring(0,400))
 
-
-
-
+for(let i=0; i<blog_content.length; i++){
+    blog_content[i].innerText = blog_content[i].innerText.substring(0,300) + " . . . ."
+}

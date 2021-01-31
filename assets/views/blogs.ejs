@@ -48,7 +48,7 @@
                 <div class="blog__container">
                     <h2 class="blog__title"><%= blog.title %></h2>
                     <p class="blog__content"><%= blog.content %></p>
-                    <h4 class="blog__date">Published on: <%= blog.date %></h4>
+                    <h4 class="blog__date">Published on: <%= moment(blog.date).format("DD/MM/YYYY") %></h4>
                     <a class="blog__readmore" href="/blogs/<%= blog._id %>">Read More</a>
                 </div>
                 <div class="blogs__divide"></div>

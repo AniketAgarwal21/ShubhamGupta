@@ -22,10 +22,10 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="/about" class="nav__link active">About</a></li>
+                        <li class="nav__item"><a href="/about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="/skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="/work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="/blogs" class="nav__link">Blogs</a></li>
+                        <li class="nav__item"><a href="/blogs" class="nav__link active">Blogs</a></li>
                         <li class="nav__item"><a href="/contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -37,21 +37,20 @@
         </header>
 
         <main class="l-main">
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+                
+            <!--===== POST-BLOG =====-->
+            <section class="blog section">
+                <h2 class="section-title">POST BLOG</h2>
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="/img/about_png.jpg" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I am Shubham</h2>
-                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, optio!
-                        </p>           
-                    </div>                                   
+                <div class="contact__container bd-grid">
+                    <form action="/post-blog" method="POST" class="contact__form">
+                        <input type="text" name="title" placeholder="Title" class="contact__input">
+                        <input type="text" name="secret_key" placeholder="Security Key" class="contact__input">
+                        <textarea name="content" placeholder="Content" id="contact_message" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="submit" value="Submit" class="contact__button button">
+                    </form>
                 </div>
+
             </section>
         </main>
 
