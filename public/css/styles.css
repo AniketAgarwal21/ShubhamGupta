@@ -571,6 +571,12 @@ img {
   text-align: center;
 }
 
+/* ===== FLASH =====*/
+.flash_msg {
+  font-weight: normal;
+  color: var(--third-color);
+}
+
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--background-color);

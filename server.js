@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 
 const path = require('path');
+const session = require('express-session');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
@@ -28,6 +29,18 @@ app.set('views', path.join(__dirname, '/assets/views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
+app.use(session({
+    secret: process.env.COOKIE_SECRET,
+    resave: true,
+    saveUninitialized: true,
+}));
+
+app.use(flash());
+app.use(function (req, res, next) {
+    res.locals.messages = require('express-messages')(req, res);
+    next();
+});
+
 app.use(bodyParser.urlencoded({
     extended: false
 }))

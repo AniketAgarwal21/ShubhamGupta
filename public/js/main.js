@@ -65,6 +65,8 @@ sr.reveal('.blog__readmore',{ interval: 200});
 sr.reveal('.blog__date',{ interval: 200}); 
 sr.reveal('.eachBlog__content',{ interval: 200}); 
 
+sr.reveal('.flash_msg',{ interval: 100}); 
+
 const blog_content = $('.blog__content');
 
 for(let i=0; i<blog_content.length; i++){
