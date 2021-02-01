@@ -22,7 +22,7 @@ const viewController = () => {
         },
         async blogs(req, res){
             const blogs = await Blogs.find({}).sort({date: -1}); 
-            console.log(blogs)
+            // console.log(blogs)
             res.render('blogs', { moment, blogs });
         },
         async eachBlog(req, res){

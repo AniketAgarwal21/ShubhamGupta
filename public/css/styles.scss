@@ -514,6 +514,13 @@ img {
     }
 }
 
+/* ===== 404 =====*/
+
+.not_found {
+    margin: var(--mb-6) auto;
+    text-align: center;
+}
+
 /* ===== FOOTER =====*/
 .footer {
     background-color: var(--background-color);
